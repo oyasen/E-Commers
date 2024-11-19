@@ -1,4 +1,5 @@
 using E_Commers.Data;
+using E_Commers.Repo;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +10,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddScoped<ICategoryRepo,CategoryRepo>();
+builder.Services.AddScoped<IUserRepo,UserRepo>();
+builder.Services.AddScoped<>(IProductRepo,ProductRepo);
+builder.Services.AddScoped<>(IPaymentCardRepo,PaymentCardRepo);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
