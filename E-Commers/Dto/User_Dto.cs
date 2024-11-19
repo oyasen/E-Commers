@@ -9,6 +9,6 @@ namespace E_Commers.Dto
         public string Email { get; set; }
         public string Password { get; set; }
         public ICollection<Product_Dto_User> Products { get; set; }
-        public PaymentCard_Dto_Only PaymentCard { get; set; }
+        public PaymentCard_Dto_Get_Only PaymentCard { get; set; }
     }
 }
